@@ -15,3 +15,9 @@ spec:
       containers:
         - name: second-node
           image: thearaseng/nodejs-app:0.0.3
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 3
